@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Colorful Currency Converter</title>
+
+  <!-- Google font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="converters.css" />
+</head>
+<body>
+  <div class="wrapper">
+    <div class="card converter">
+      <div class="top-right">
+        <div>
+          <h1>Currency Converter</h1>
+          <div class="sub">Fast, colorful & packed with features ✨</div>
+        </div>
+
+        <div class="toggle" id="themeToggle" title="Toggle dark/light">
+          🌙 <span class="small">Dark mode</span>
+        </div>
+      </div>
+
+      <!-- amount + selects -->
+      <div style="margin-top:0.8rem;">
+        <label class="small muted">Enter Amount</label>
+        <div class="amount" style="margin-top:0.45rem;">
+          <input id="amountInput" type="number" placeholder="Enter amount" value="1" min="0.01" step="any" />
+        </div>
+
+        <div class="row" style="margin-top:0.9rem;">
+          <div class="select-box from" style="flex:0.48;">
+            <img src="https://flagsapi.com/US/flat/64.png" alt="from-flag" />
+            <select name="from" id="fromSelect"></select>
+          </div>
+
+          <div class="swap" id="swapBtn" title="Swap currencies">🔁</div>
+
+          <div class="select-box to" style="flex:0.48;">
+            <img src="https://flagsapi.com/IN/flat/64.png" alt="to-flag" />
+            <select name="to" id="toSelect"></select>
+          </div>
+        </div>
+
+        <!-- controls -->
+        <div class="controls">
+          <button class="btn" id="convertBtn">Get Exchange Rate</button>
+          <button class="copy" id="copyBtn" title="Copy result">📋</button>
+          <button class="share" id="shareBtn" title="Share result">📤</button>
+        </div>
+
+        <div class="msg" id="msg">— Make a conversion —</div>
+
+        <div class="controls-row">
+          <div class="small muted">Tip: Save pairs as favourites for 1-click conversions.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- side column -->
+    <div class="card side">
+      <div class="ticker">
+        <h3>Live Rates</h3>
+        <div class="strip">
+          <div class="marquee" id="tickerContent">Loading rates…</div>
+        </div>
+      </div>
+
+      <div class="favourites">
+        <h3>⭐ Favourites</h3>
+        <div class="fav-list" id="favList"></div>
+      </div>
+
+      <div class="history">
+        <h3>🕘 History</h3>
+        <div class="hist-list" id="histList"></div>
+        <div class="clear-all" id="clearHistoryBtn">🧹 Clear History</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="apps.js"></script>
+</body>
+</html>
+
