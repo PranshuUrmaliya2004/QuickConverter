@@ -287,17 +287,18 @@ copyBtn.addEventListener("click", async () => {
   }
 });
 
-shareBtn.addEventListener("click", () => {
-  const text = msg.textContent.trim();
-  if(!text || text.startsWith("⚠️") || text.startsWith("—")) {
-    alert("Do a conversion first!");
-    return;
-  }
-  const encoded = encodeURIComponent(text + " — via Colorful Converter");
-  const whatsapp = `https://wa.me/?text=${encoded}`;
-  window.open(whatsapp, "_blank");
-});
+// shareBtn.addEventListener("click", () => {
+//   const text = msg.textContent.trim();
+//   if(!text || text.startsWith("⚠️") || text.startsWith("—")) {
+//     alert("Do a conversion first!");
+//     return;
+//   }
+//   const encoded = encodeURIComponent(text + " — via Colorful Converter");
+//   const whatsapp = `https://wa.me/?text=${encoded}`;
+//   window.open(whatsapp, "_blank");
+// });
 
+// --- Share --- shareBtn.addEventListener("click", () => { if (navigator.share) { navigator.share({ title: "Currency Conversion", text: msg.innerText }); } else { alert("Sharing not supported on this browser."); } });
 /* -----------------------------
    History (localStorage)
    ----------------------------- */
